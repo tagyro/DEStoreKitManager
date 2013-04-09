@@ -650,8 +650,7 @@ typedef void (^DEStoreKitTransactionHandlerVerifyBlock)(SKPaymentTransaction *tr
           didVerify: (BOOL)isValid {
     for (DEStoreKitTransactionHandler *handler in self.transactionHandlers) {
         if ([handler.payment isEqual:transaction.payment]) {
-            [handler transaction: transaction
-                     wasVerified: isValid];
+            [handler transaction: transaction wasVerified: isValid];
             break;
         }
     }
